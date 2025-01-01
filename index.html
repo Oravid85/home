@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הרצאות מעולות!</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slideshow.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,12 +27,40 @@
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
-                <div class="image"><img height="400"
-                        src="https://www.nostal.co.il/upload/%D7%90%D7%A8%D7%99%D7%A1%20%D7%A1%D7%9F=%D7%90%D7%93%D7%99%D7%98%D7%95%D7%A8---.jpg" />
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="https://images.cdn-files-a.com/uploads/6918488/2000_65c646aa59e06.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="https://shabloolrecords.co.il/wp-content/uploads/2022/07/ARIS-SAN-BOUMPAM-DAM-DAM.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVXSpgKsSWM_xkBmKqIZBpw8y6V2qWA9Kf5w&s" style="width:100%">
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                    </div>
+                    
                 </div>
             </div>
             
             <div class="card">
+                <div class="rightcolumn">
                 <div class="about-the-lecture">
                     <h2 style="text-align: center;">על ההרצאה</h2>
                     <p style="text-align: justify;">אריס סאן, הוא אחד מאבות המוזיקה והתרבות הישראלית וחלוץ המוזיקה
@@ -48,14 +78,16 @@
                         סאן,
                         דמותו, הסיפור שלו, מאיפה בא, ולאן
                         הלך?
-                        וננסה להבין ואיך הצליח ב-13 שנים להשאיר חותם על ישראל, ולהפוך לפרק בסיפור שלה, שמלווה אותה עד
+                        וננסה להבין איך הצליח ב-13 שנים להשאיר חותם על ישראל, ולהפוך לפרק בסיפור שלה, שמלווה אותה עד
                         היום ונוכח
                         כמעט בכל פינה.</p>
                 </div>
-                <div class="card"></div>
             </div>
-            <div class="row">
-                <div class="card">
+            </div>
+            
+            <div class="row"></div>
+            <div class="rightcolumn">    
+            <div class="card">
                     <div class="marketing">
                         <h2> לתיאום הרצאות ומידע נוסף</h2>
         
@@ -74,7 +106,7 @@
                                     name="tel">
         
                                 <div><button id="btn">שלח</button></div>
-            </div>
+            
         </div>
     <div class="row">
 
@@ -132,5 +164,5 @@
 
 
 </body>
-
+<script src="slideshow.js"></script>
 </html>
