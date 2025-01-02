@@ -28,3 +28,29 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+let TextslideIndex = 1;
+showTextSlides(TextslideIndex);
+
+function plusTextSlides(n) {
+  showTextSlides((TextslideIndex += n));
+}
+
+// function currentTextSlide(n) {
+//   showTextSlides((TextslideIndex = n));
+// }
+
+function showTextSlides(n) {
+  let x;
+  let Textslides = document.getElementsByClassName("myTextSlides");
+  if (n > Textslides.length) {
+    TextslideIndex = 1;
+  }
+  if (n < 1) {
+    TextslideIndex = Textslides.length;
+  }
+  for (x = 0; x < Textslides.length; x++) {
+    Textslides[x].style.display = "none";
+  }
+  Textslides[TextslideIndex - 1].style.display = "block";
+}
