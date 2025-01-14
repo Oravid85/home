@@ -54,3 +54,31 @@ function showTextSlides(n) {
   }
   Textslides[TextslideIndex - 1].style.display = "block";
 }
+
+const audio = document.getElementById("myAudio");
+
+audio.volume = 1;
+audio.play();
+
+// Function to fade out the audio
+function fadeOutAudio(audio, duration) {
+  const fadeOutInterval = 100; // Interval in ms (milliseconds)
+  const fadeOutStep = 0.1 / (duration / fadeOutInterval); // How much to decrease the volume each interval
+
+  let currentVolume = audio.volume;
+  console.log(audio.volume);
+
+  const fadeOut = setInterval(() => {
+    if (currentVolume > 0) {
+      currentVolume -= fadeOutStep;
+      audio.volume = Math.max(currentVolume, 0); // Prevent going below 0
+    } else {
+      clearInterval(fadeOut); // Stop once the volume reaches 0
+      audio.pause(); // Optionally stop the audio after fading out
+      console.log("music stop");
+    }
+  }, fadeOutInterval);
+}
+
+// Call the fade out function after 5 seconds (5000 ms)
+setTimeout(() => fadeOutAudio(audio, 10000), 15000); // Fade out after 5 seconds, over 2 seconds
